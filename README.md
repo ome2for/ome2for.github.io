@@ -1,13 +1,6 @@
-## Welcome to GitHub Pages
-
-You can use the [editor on GitHub](https://github.com/ome2for/ome2for.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
+## :Spatial number, multi-demensional complex:
+### Definition and expression
+>We know a complex ___Z___=__a__+__b__i indicates a point__(a, b)__on the complex plane, the vector from the origin 
 ```markdown
 Syntax highlighted code block
 
