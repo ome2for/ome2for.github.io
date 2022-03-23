@@ -1,0 +1,462 @@
+<!DOCTYPE html><html><head>
+      <title>README</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({"extensions":["tex2jax.js"],"jax":["input/TeX","output/HTML-CSS"],"messageStyle":"none","tex2jax":{"processEnvironments":false,"processEscapes":true,"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"TeX":{"extensions":["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]},"HTML-CSS":{"availableFonts":["TeX"],"imageFont":null},"root":"file:///C:/Users/yaholin/.atom/packages/markdown-preview-enhanced/node_modules/@shd101wyy/mume/dependencies/mathjax"});
+        </script>
+        <script type="text/javascript" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+        
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h2 class="mume-header" id="spatial-number-multi-dimensional-complex">Spatial number, multi-dimensional complex</h2>
+
+<h3 class="mume-header" id="1-definition-and-expression">1. Definition and expression</h3>
+
+<blockquote>
+<p>We know that a complex number <strong>Z=a+bi</strong> indicates a point <strong>(a, b)</strong> in the complex plane, hence the modulus of the vector from (0,0) to (a,b) i.e  <strong><span class="mathjax-exps">$\vert \overrightarrow{Z} \vert$</span></strong> is <strong><span class="mathjax-exps">$r=\sqrt{a^2+b^2}$</span></strong> and it's argument is <strong><span class="mathjax-exps">$\theta=\arctan\left(\frac{b}{a}\right)$</span></strong>, which is the angle turning conterclockwisely away from the real axis <strong>X</strong>. Regardless of it's periodicity, <strong><span class="mathjax-exps">$\theta\in{\left(-\pi, \pi\right]}$</span></strong> . Expolently expressed it is as <strong><span class="mathjax-exps">$Z=re^{{\theta}i}$</span></strong>。</p>
+</blockquote>
+<blockquote>
+<p>In the same way, we define <strong>S=a+bi+cj</strong> as a point <strong>(a, b, c)</strong> in three dimensional space, where the real part <strong>a</strong> is on axis <strong>X</strong>,  the first imaginary part <strong>b</strong> is on axis <strong>Y</strong>  and the second imaginary part <strong>c</strong> is on axis <strong>Z</strong>. The modulus of vector <strong><span class="mathjax-exps">$\overrightarrow{S}$</span></strong> is <strong><span class="mathjax-exps">$r=\sqrt{a^2+b^2+c^2}$</span></strong>. If let  <strong><span class="mathjax-exps">$r_1=\sqrt{a^2+b^2}$</span></strong> , called first modulus, indicating the modulus of projective vector in <span class="mathjax-exps">$XY$</span> plane, then <strong><span class="mathjax-exps">$\theta_1=\arctan\left(\frac{b}{a}\right)$</span></strong>, indicating the angle turning conterclockwisely away from the real axis <strong>X</strong>, is ranged in <strong><span class="mathjax-exps">$\left(-\pi, \pi\right]$</span></strong>, while  <strong><span class="mathjax-exps">$\theta_2=\arctan\left(\frac{c}{r_1}\right)$</span></strong> indicates the angle leaving the <strong>X-Y</strong> plane for <strong>Z</strong>  in range <strong><span class="mathjax-exps">$\left(-\frac{\pi}{2}, \frac{\pi}{2}\right]$</span></strong> . We call <strong><span class="mathjax-exps">$\theta_1$</span></strong> the first argument and <strong><span class="mathjax-exps">$\theta_2$</span></strong> the second argument. So in polary coordinate the expression is <strong><span class="mathjax-exps">$S=re^{\theta_1{i}+\theta_2{j}}$</span></strong></p>
+</blockquote>
+<blockquote>
+<p>Now we generalize the idea above as the following statement: <strong><span class="mathjax-exps">$S=a_0+a_1\bar{\imath}+a_2\acute{\imath}+a_3\check{\imath}+a_4\grave{\imath}+\cdots\cdots+a_n\hat{\imath}$</span></strong> (the <strong><span class="mathjax-exps">$\wedge$</span></strong> on top of <strong><span class="mathjax-exps">$\imath$</span></strong> should be <strong>n</strong>)<br>
+represents a point <strong><span class="mathjax-exps">$(a_0, a_1, a_2, \cdots\cdots, a_n )$</span></strong> in <strong>n+1</strong> dimensional space. Such defined number is called <strong>n+1</strong> dimensional <em><strong>spatial number</strong></em>.<br>
+If let  <strong><span class="mathjax-exps">$r_0=a_0$</span></strong>,<br>
+<strong><span class="mathjax-exps">$r_1=\sqrt{a_0^2+a_1^2}$</span></strong>,(first modulus)<br>
+<strong><span class="mathjax-exps">$\cdots\cdots$</span></strong>,<br>
+<strong><span class="mathjax-exps">$r_{n-1}=\sqrt{a_0^2+a_1^2+\cdots\cdots+a_{n-1}^2}$</span></strong>,<br>
+and  <strong><span class="mathjax-exps">$r=\sqrt{a_0^2+a_1^2+\cdots\cdots+a_n^2}$</span></strong>,<br>
+then <strong><span class="mathjax-exps">$\theta_1=\arctan\left(\frac{a_1}{r_0}\right)$</span></strong>,(first argument)<br>
+<strong><span class="mathjax-exps">$\theta_2=\arctan\left(\frac{a_2}{r_1}\right)$</span></strong>,<strong><span class="mathjax-exps">$\cdots\cdots$</span></strong>,<br>
+and <strong><span class="mathjax-exps">$\theta_n=\arctan\left(\frac{a_n}{r_{n-1}}\right)$</span></strong>,<br>
+It also can be expressed in expolent form as <strong><span class="mathjax-exps">$S=re^{\theta_1\bar{\imath}+\theta_2\acute{\imath}+\theta_3\check{\imath}+\cdots\cdots+\theta_n\hat{\imath}}$</span></strong>.</p>
+</blockquote>
+<blockquote>
+<p>To simplify the expression, let <strong><span class="mathjax-exps">$a$</span></strong> represent the sequence <strong><span class="mathjax-exps">$\left[a_1, a_2, \cdots\cdots, a_n\right]$</span></strong> (called <strong>spatial-position-row</strong>) and <strong><span class="mathjax-exps">$I$</span></strong> represent the sequence <strong><span class="mathjax-exps">$\left[\bar{\imath}, \acute{\imath}, \check{\imath}, \grave{\imath}, \cdots\cdots, \hat{\imath}\right]$</span></strong>  (called <strong>spatial-axis-collum</strong>), so that <strong><span class="mathjax-exps">$S=a_0+aI$</span></strong>, where <strong><span class="mathjax-exps">$aI$</span></strong> implies the dot product of <strong><span class="mathjax-exps">$a$</span></strong> and <strong><span class="mathjax-exps">$I$</span></strong>. We call it the <em><strong>spatial-position expression</strong></em>.  If insert the real part <strong>a_0</strong> into <strong><span class="mathjax-exps">$a$</span></strong> and <strong><span class="mathjax-exps">$1$</span></strong>  into <strong><span class="mathjax-exps">$I$</span></strong>, i.e. <strong><span class="mathjax-exps">$a=\left[a_0, a_1, \cdots\cdots, \right]$</span></strong> and <strong><span class="mathjax-exps">$\hat{I}=\left[1, \bar{\imath}, \cdots\right]$</span></strong>, we can get the simpliest form <strong><span class="mathjax-exps">$S=a\hat{I}$</span></strong>, which is called <em><strong>all-position expression</strong></em>.<br>
+Parellely in expolent expression, if <strong><span class="mathjax-exps">$\theta=\left[\theta_1, \theta_2, \cdots\cdots, \theta_n\right]$</span></strong>,  then <strong><span class="mathjax-exps">$S=re^{\theta{I}}$</span></strong>, which is called <em><strong>spatial-phrase expression</strong></em>. Since <strong><span class="mathjax-exps">$r\gt{0}$</span></strong>, so if let <strong><span class="mathjax-exps">$\theta_0=\ln{r}$</span></strong> and <strong><span class="mathjax-exps">$\theta=\left[\theta_0, \theta_1, \theta_2, \cdots\cdots, \theta_n\right]$</span></strong>,  then <strong><span class="mathjax-exps">$S=e^{\theta{\hat{I}}}$</span></strong>, that is called <em><strong>all-phrase expression</strong></em>.</p>
+</blockquote>
+<h3 class="mume-header" id="2-operation-rules">2. Operation rules</h3>
+
+<ul>
+<li>
+<h5>Addition and subtraction</h5>
+</li>
+</ul>
+<blockquote>
+<blockquote>
+<p>Spatial numbers follow the same rules of addition and subtraction as applied in complex numbers, that is to add or subtract each part respectively.<br>
+<strong><span class="mathjax-exps">$S=a_0+a_1\bar{\imath}+a_2\acute{\imath}+\cdots =a_0+aI$</span></strong><br>
+<strong><span class="mathjax-exps">$P=b_0+b_1\bar{\imath}+b_2\acute{\imath}+\cdots =b_0+bI$</span></strong><br>
+<strong><span class="mathjax-exps">$S{\pm}P=(a_0{\pm}b_0)+(a_1{\pm}b_1)\bar{\imath}+(a_2{\pm}b_2)\acute{\imath}+\cdots=(a_0{\pm}b_0)+(a{\pm}b)I$</span></strong><br>
+While in expolent expression, it has to be transformed in the follwing way:<br>
+If <strong><span class="mathjax-exps">$S=re^{\theta_1{\bar{\imath}}+\theta_2{\acute{\imath}}+\cdots+\theta_n{\hat{\imath}}}=re^{\theta{I}}$</span></strong> and<br>
+<strong><span class="mathjax-exps">$P={\rho}e^{\varphi_1\bar{\imath}+\varphi_2\acute{\imath}+\cdots+\varphi_n\hat{\imath}}={\rho}e^{\varphi{I}}$</span></strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>then <strong><span class="mathjax-exps">$a_0=r\cos{\theta_1}\cos{\theta_2}\cdots\cos{\theta_n}$</span></strong><br>
+<strong><span class="mathjax-exps">$b_0=\rho\cos{\varphi_1}\cos{\varphi_2}\cdots\cos{\varphi_n}$</span></strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong><span class="mathjax-exps">$a_1=r\sin{\theta_1}\cos{\theta_2}\cos{\theta_3}\cdots\cos{\theta_n}$</span></strong><br>
+<strong><span class="mathjax-exps">$b_1=\rho\sin{\varphi_1}\cos{\varphi_2}\cdots\cos{\varphi_n}$</span></strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong><span class="mathjax-exps">$a_2=r\sin{\theta_2}\cos{\theta_3}\cdots\cos{\theta_n}$</span></strong><br>
+<strong><span class="mathjax-exps">$b_2=\rho\sin{\varphi_2}\cos{\varphi_3}\cdots\cos{\varphi_n}$</span></strong><br>
+<strong><span class="mathjax-exps">$\cdots\cdots$</span></strong><br>
+<strong><span class="mathjax-exps">$a_{n-1}=r\sin{\theta_{n-1}}\cos{\theta_n}$</span></strong><br>
+<strong><span class="mathjax-exps">$b_{n-1}=\rho{\sin{\theta_{n-1}}\cos{\theta_n}}$</span></strong><br>
+<strong><span class="mathjax-exps">$a_n=r\sin{\theta_n}$</span></strong><br>
+<strong><span class="mathjax-exps">$b_n=\rho\sin{\varphi_n}$</span></strong><br>
+For the sake of simplicity, we initiatively define two functions:<br>
+The first is <strong><span class="mathjax-exps">$Recursive-cosine$</span></strong>, difined  as:<br>
+<strong><span class="mathjax-exps">$Recos\theta=\cos{\theta_1}\cos{\theta_2}\cdots\cos{\theta_n}$</span></strong>, where<br>
+<strong><span class="mathjax-exps">$\theta=[\theta_1, \theta_2, \cdots, \theta_n]$</span></strong><br>
+and the second is <strong><span class="mathjax-exps">$Recursive-sine$</span></strong> function , defined as:<br>
+<strong><span class="mathjax-exps">$Resin\theta=[\sin{\theta_1}\cos{\theta_2}\cdots\cos{\theta_n},\sin{\theta_2}\cos{\theta_3}\cdots\cos{\theta_n}, \sin{\theta_3}\cos{\theta_4}\cdots\cos{\theta_n}, \cdots\cdots, \sin{\theta_n} ]$</span></strong><br>
+therefore we can get the follwing expression:<br>
+<strong><span class="mathjax-exps">$S=re^{\theta{I}}=r(Recos\theta+IResin\theta)$</span></strong><br>
+<strong><span class="mathjax-exps">$P=\rho{e^{\varphi{I}}}=\rho(Recos\varphi+IResin\varphi)$</span></strong><br>
+<strong><span class="mathjax-exps">$S{\pm}P=(rRecos{\theta}{\pm}{\rho}Recos{\varphi})+(rResin{\theta}{\pm}{\rho}Resin{\varphi})I$</span></strong></p>
+</blockquote>
+</blockquote>
+<ul>
+<li>
+<h4>multiplication and devision</h4>
+</li>
+</ul>
+<blockquote>
+<blockquote>
+<p>Before inquiring the method of multiplication on spatial numbers, we should review the rule applied in complex numbers:<br>
+<strong><span class="mathjax-exps">$Z_1=r_1e^{\theta_1i}$</span></strong><br>
+<strong><span class="mathjax-exps">$Z_2=r_2e^{\theta_2i}$</span></strong><br>
+<strong><span class="mathjax-exps">$Z_1Z_2=r_1r_2e^{(\theta_1+\theta_2)i}$</span></strong><br>
+We assume that this rule still holds for spatial numbers, so the multiplication of two spatial numbers can be defined as following statement:<br>
+if they are given in expolent expressions, here in <strong><span class="mathjax-exps">$all-phrase-expression$</span></strong>:<br>
+<strong><span class="mathjax-exps">$S=e^{\theta{\hat{I}}}$</span></strong><br>
+<strong><span class="mathjax-exps">$P=e^{\varphi{\hat{I}}}$</span></strong><br>
+then  <strong><span class="mathjax-exps">$SP=e^{(\theta+\varphi)\hat{I}}$</span></strong><br>
+Quite simple!<br>
+However, it's truly not obvious to see how to multiply<br>
+two spatial numbers given in coordinate expressions:<br>
+<strong><span class="mathjax-exps">$S=a_0+a_1\bar{\imath}+a_2\acute{\imath}+\cdots=a\hat{\imath}$</span></strong><br>
+<strong><span class="mathjax-exps">$P=b_0+b_1\bar{\imath}+b_2\acute{\imath}+\cdots=b\hat{\imath}$</span></strong><br>
+where <strong><span class="mathjax-exps">$a=[a_0, a_1, a_2, \cdots, a_n]$</span></strong><br>
+<strong><span class="mathjax-exps">$b=[b_0, b_1, b_2, \cdots, b_n]$</span></strong><br>
+In fact, it is a recursive procession as follows:<br>
+<strong><span class="mathjax-exps">$S_1=a_0+a_1\bar{\imath}$</span></strong><br>
+<strong><span class="mathjax-exps">$S_2=a_0+a_1\bar{\imath}+a_2\acute{\imath}$</span></strong><br>
+<strong><span class="mathjax-exps">$\cdots\cdots$</span></strong><br>
+<strong><span class="mathjax-exps">$P_1=b_0+b_1\bar{\imath}$</span></strong><br>
+<strong><span class="mathjax-exps">$P_2=b_0+b_1\bar{\imath}+b_2\acute{\imath}$</span></strong><br>
+<strong><span class="mathjax-exps">$\cdots\cdots$</span></strong><br>
+<strong><span class="mathjax-exps">$S_1P_1=a_0b_0(1-\frac{a_1b_1}{a_0b_0})+(a_1b_0+b_1a_0)\bar{\imath}$</span></strong>(multiplication of two ordinary complex numbers )<br>
+<strong><span class="mathjax-exps">$S_2P_2=S_1P_1(1-\frac{a_2b_2}{|S_1||P_1|})+(a_2|P_1|+b_2|S_1|)\acute{\imath}$</span></strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong><span class="mathjax-exps">$S_3P_3=S_2P_2(1-\frac{a_3b_3}{|S_2||P_2|})+(a_3|P_2|+b_3|S_2|)\check{\imath}$</span></strong><br>
+<strong><span class="mathjax-exps">$\cdots\cdots$</span></strong><br>
+if <strong><span class="mathjax-exps">$SP=c_0+c_1\bar{\imath}+c_2\acute{\imath}+\cdots=c\hat{\imath}$</span></strong><br>
+then <strong><span class="mathjax-exps">$c_0=a_0b_0(1-\frac{a_1b_1}{a_0b_0})(1-\frac{a_2b_2}{|S_1||P_1|})(1-\frac{a_3b_3}{|S_2||P_2|})\cdots(1-\frac{a_nb_n}{|S_{n-1}||P_{n-1}|})=|S||P|\frac{a_0b_0-a_1b_1}{|S_1||P_1|}\frac{|S_1||P_1|-a_2b_2}{|S_2||P_2|}\cdots\frac{|S_{n-1}||P_{n-1}|-a_nb_n}{|S||P|}=|S||P|\cos(\theta_1+\varphi_1)\cos(\theta_2+\varphi_2)\cdots\cos(\theta_n+\varphi_n)$</span></strong><br>
+<strong><span class="mathjax-exps">$c_1=(a_1b_0+b_1a_0)(1-\frac{a_2b_2}{|S_1||P_1|})(1-\frac{a_3b_3}{|S_2||P_2|})\cdots(1-\frac{a_nb_n}{|S_{n-1}||P_{n-1}|})=|S||P|\frac{a_1b_0+b_1a_0}{|S_1||P_1|}\frac{|S_1||P_1|-a_2b_2}{|S_2||P_2|}\cdots\frac{|S_{n-1}||P_{n-1}|-a_nb_n}{|S||P|}=|S||P|\sin(\theta_1+\varphi_1)\cos(\theta_2+\varphi_2)\cdots\cos(\theta_n+\varphi_n)$</span></strong><br>
+<strong><span class="mathjax-exps">$c_2=(a_2|P_1|+b_2|S_1|)(1-\frac{a_3b_3}{|S_2||P_2|})\cdots(1-\frac{a_nb_n}{|S_{n-1}||P_{n-1}|})=|S||P|\frac{a_2|P_1|+b_2|S_1|}{|S_2||P_2|}\frac{|S_2||P_2|-a_3b_3}{|S_3||P_3|}\cdots\frac{|s_{n-1}||P_{n-1}|-a_nb_n}{|S||P|}=|S||P|\sin(\theta_2+\varphi_2)\cos(\theta_3+\varphi_3)\cdots\cos(\theta_n+\varphi_n)$</span></strong><br>
+<strong><span class="mathjax-exps">$\cdots\cdots$</span></strong><br>
+<strong><span class="mathjax-exps">$c_n=a_n|P_{n-1}|+b_n|S_{n-1}|=|S||P|\frac{a_n|P_{n-1}|+b_n|S_{n-1}|}{|S||P|}=|S||P|\sin(\theta_n+\varphi_n)$</span></strong><br>
+therefore <strong><span class="mathjax-exps">$SP=|S||P|(Recos(\theta+\varphi)+IResin(\theta+\varphi))$</span></strong></p>
+</blockquote>
+</blockquote>
+<p>In the recursive procession mentioned above,the <span class="mathjax-exps">$|S_{n-1}||P_{n-1}|$</span> shoul be non-zero. Otherwise, when one of the two is zero, if let <span class="mathjax-exps">$|S_{n-1}|\neq 0$</span> and <span class="mathjax-exps">$|P_{n-1}|=0$</span>, then </p><div class="mathjax-exps">$$S_nP_n=(-S_{n-1}a_n \frac{|b_n|}{|S_{n-1}|}, b_n|S_{n-1}|)$$</div><br>
+If <span class="mathjax-exps">$|S_{n-1}|=|P_{n-1}|=0$</span>, then <span class="mathjax-exps">$S_nP_n=-a_nb_n$</span>.<p></p>
+<ul>
+<li>Discussion on imaginary unit</li>
+</ul>
+<blockquote>
+<blockquote>
+<p><strong><span class="mathjax-exps">$\bar{\imath}\acute{\imath}=?$</span></strong><br>
+<strong><span class="mathjax-exps">$\bar{\imath}\rightarrow(0, 1, 0) ,  \acute{\imath}\rightarrow(0, 0, 1)$</span></strong><br>
+so <strong><span class="mathjax-exps">$\bar{\imath}\acute{\imath}=\acute{\imath}$</span></strong><br>
+or <strong><span class="mathjax-exps">$\bar\imath=e^{\frac{\pi}{2}{\bar{\imath}}}$</span></strong><br>
+<strong><span class="mathjax-exps">$\acute\imath=e^{\frac{\pi}{2}{\acute\imath}}$</span></strong><br>
+<strong><span class="mathjax-exps">$\bar\imath\acute\imath=e^{\frac{\pi}{2}\bar\imath+\frac{\pi}{2}\acute\imath}=(\cos\frac{\pi}{2}\cos\frac{\pi}{2}, \sin\frac{\pi}{2}\cos\frac{\pi}{2}, \sin\frac{\pi}{2})=\acute\imath$</span></strong><br>
+Similarily, <strong><span class="mathjax-exps">$\bar\imath\check\imath=\acute\imath\check\imath=\bar\imath\acute\imath\check\imath=\check\imath$</span></strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong><span class="mathjax-exps">$\acute\imath^2=?$</span></strong><br>
+Jast like <strong><span class="mathjax-exps">$i^2=-1$</span></strong> in complex number, <strong><span class="mathjax-exps">$\acute{\imath}^2=-1$</span></strong> still holds. In fact, <strong><span class="mathjax-exps">$\acute{\imath}^2=-(\cos{\theta}+\bar{\imath}\sin{\theta})$</span></strong>, where <strong><span class="mathjax-exps">$\theta\in(-\pi, \pi]$</span></strong>, i.e it is an inverse  unit circle in the complex plane.<br>
+Similarily, <strong><span class="mathjax-exps">$\check{\imath}^2=-e^{\theta{\bar{\imath}}+\varphi\acute{\imath}}$</span></strong>, representing the inverse unit sphere in 3-D space.</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong><span class="mathjax-exps">$\frac{1}{\acute{\imath}}=?$</span></strong><br>
+<strong><span class="mathjax-exps">$\frac{1}{\acute{\imath}}=e^{(0-\frac{\pi}{2})}=-\acute{\imath}$</span></strong>.<br>
+<strong><span class="mathjax-exps">$\frac{1}{\check{\imath}}=-\check{\imath}$</span></strong><br>
+$**</p>
+</blockquote>
+</blockquote>
+<h3 class="mume-header" id="3-extension-on-complex-number">3. Extension on complex number</h3>
+
+<ul>
+<li>On C-R function</li>
+</ul>
+<blockquote>
+<blockquote>
+<p>Cauchy-Riemann theorem says that for complex number <strong><span class="mathjax-exps">$Z=x+yi$</span></strong>,<br>
+if <strong><span class="mathjax-exps">$f(Z)=u(x, y)+v(x, y)i$</span></strong> is differential at <strong><span class="mathjax-exps">$(x_0, y_0)$</span></strong>,<br>
+then exists: <strong><span class="mathjax-exps">$\left\{\begin{array}{r}u_x=v_y\\u_y=-v_x\end{array}\right.$</span></strong><br>
+If spatial number <strong><span class="mathjax-exps">$S=x+y\bar{\imath}+z\acute{\imath}$</span></strong> and function <strong><span class="mathjax-exps">$f(Z)=u(x, y, z)+v(x, y, z)\bar{\imath}+w(x, y, z)\check{\imath}$</span></strong> is differential at <strong><span class="mathjax-exps">$(x_0,y_0,z_0)$</span></strong><br>
+then exists: <strong><span class="mathjax-exps">$\left\{\begin{array}{r}u_x=v_y=w_z\\v_x=-u_y=0\\w_x=-w_y=-v_z-u_z\end{array}\right.$</span></strong></p>
+</blockquote>
+</blockquote>
+<p>If spatial number <strong><span class="mathjax-exps">$S=x+y\bar{\imath}+z\acute{\imath+t\check\imath}+t\grave{\imath}$</span></strong> and function <strong><span class="mathjax-exps">$f(Z)=u(x, y, z, t)+v(x, y, z, t)\bar{\imath}+w(x, y, z, t)\check{\imath}+r(x, y, z, t)\grave{\imath}$</span></strong> is differential at <strong><span class="mathjax-exps">$(x_0,y_0,z_0, t_0)$</span></strong><br>
+then exists: <strong><span class="mathjax-exps">$\left\{\begin{array}{r}u_x=v_y=w_z=r_t\\v_x=-u_y=0\\w_x=-w_y=-v_z-u_z=0\\r_x=-r_y=-r_z=-u_t-v_t-w_t\end{array}\right.$</span></strong></p>
+<ul>
+<li>The angle between two spatial numbers<br>
+If two complex numbers <strong><span class="mathjax-exps">$Z_1=re^{\theta{i}}=r(\cos{\theta}+i\sin{\theta})$</span></strong> and <strong><span class="mathjax-exps">$Z_2=\rho e^{\varphi{i}}=\rho(\cos{\varphi}+i\sin{\varphi})$</span></strong>,<br>
+the angle between <strong><span class="mathjax-exps">$Z_1$</span></strong> and <strong><span class="mathjax-exps">$Z_2$</span></strong>  is <strong><span class="mathjax-exps">$\theta-\varphi$</span></strong><br>
+<strong><span class="mathjax-exps">$\cos(\theta-\varphi)=\cos{\theta}\cos{\varphi}+\sin{\theta}\sin{\varphi}$</span></strong></li>
+</ul>
+<p>If two spatial numbers are given in <strong>spatial-phase</strong> expressions, as follows: <strong><span class="mathjax-exps">$S_1=re^{\theta{I}}=r(Recos{\theta}+IResin\theta)=aI$</span></strong> and <strong><span class="mathjax-exps">$S_2=\rho e^{\varphi{I}}=\rho(Recos{\varphi}+IResin\varphi)=bI$</span></strong>, then the angle between <strong><span class="mathjax-exps">$S_1$</span></strong> and <strong><span class="mathjax-exps">$S_2$</span></strong> is symblized as <strong><span class="mathjax-exps">$\theta\wedge\varphi$</span></strong><br>
+<strong><span class="mathjax-exps">$\cos(\theta\wedge\varphi)=Recos\theta Recos\varphi+Resin\theta Resin\varphi=\frac{ab}{|a||b|}$</span></strong></p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
